@@ -10,31 +10,56 @@
 #include <queue>
 using namespace std;
 
-int N, R, size;
+int N, R, s;
+vector<vector<int>> v;
 
-//int main() {
-//    ios::sync_with_stdio(NULL);
-//    cin.tie(NULL); cout.tie(NULL);
-//    
-//    cin >> N >> R;
-//    size = pow(2,N);
-//    vector<vector<int>> v(size, vector<int>(size, 0));
-//    
-//    for(int i = 0; i < size; i++) {
-//        for(int j = 0; j < size; j++) {
-//            int x; cin >> x;
-//            v[i][j] = x;
-//        }
-//    }
-//    
-//    while(R--) {
-//        
-//    }
-//    for(int i = 0; i < size; i++) {
-//        for(int j = 0; j < size; j++) {
-//            cout << v[i][j] << " ";
-//        }
-//        cout << '\n';
-//    }
-//    return 0;
-//}
+void cal_1(int l) {
+    
+}
+int main() {
+    ios::sync_with_stdio(NULL);
+    cin.tie(NULL); cout.tie(NULL);
+    
+    cin >> N >> R;
+    s = pow(2,N);
+    v.resize(s, vector<int>(s, 0));
+    
+    for(int i = 0; i < s; i++) {
+        for(int j = 0; j < s; j++) {
+            int x; cin >> x;
+            v[i][j] = x;
+        }
+    }
+    
+    while(R--) {
+        int a, b; cin >> a, b;
+        
+        if (a == 0) {
+            continue;
+        } else if (a == 1) {
+            cal_1(b);
+        } else if (a == 2) {
+            
+        } else if (a == 3) {
+            
+        } else if (a == 4) {
+            
+        } else if (a == 5) {
+            
+        } else if (a == 6) {
+            
+        } else if (a == 7) {
+            
+        } else if (a == 8) {
+            
+        }
+    }
+    
+    for(int i = 0; i < s; i++) {
+        for(int j = 0; j < s; j++) {
+            cout << v[i][j] << " ";
+        }
+        cout << '\n';
+    }
+    return 0;
+}
