@@ -15,66 +15,42 @@ int main() {
     ios::sync_with_stdio(NULL);
     cin.tie(NULL); cout.tie(NULL);
     
-    int N; cin >> N;
-    vector<double> s;
-    stack<char> cal;
+    int N;
+    string str;
+    cin >> N >> str;
     
-    string str; cin >> str;
+    vector<int> v(N);
+    stack<double> s;
+    
+    for(int i = 0; i < N; i++) {
+        cin >> v[i];
+    }
     
     for(int i = 0; i < str.length(); i++) {
-        if(str[i] == '+' || str[i] == '-' || str[i] == '*' || str[i] == '/') {
-            cal.push(str[i]);
+        if(str[i] >= 'A' && str[i] <= 'Z') {
+            s.push(v[str[i] - 'A']);
         } else {
-            s.push_back((double)str[i]);
-        }
-    }
-    for(int i = 0; i < N; i++) {
-        int a; cin >> a;
-
-        for(int j = 0; j < s.size(); j++) {
-            if(((double)'A' + i) == s.at(j)) {
-                s.at(j) = a;
+            if (!s.empty()) {
+                double tmp = s.top();
+                s.pop();
+                if (str[i] == '+') {
+                    tmp += s.top();
+                } else if (str[i] == '-') {
+                    tmp = s.top() - tmp;
+                } else if (str[i] == '*') {
+                    tmp *= s.top();
+                } else if (str[i] == '/') {
+                    tmp = s.top() / tmp;
+                }
+                s.pop();
+                s.push(tmp);
             }
         }
     }
     
-    while(!cal.empty()) {
-        if (cal.top() == '+') {
-            double a = s.back();
-            s.pop_back();
-            double b = s.back();
-            s.pop_back();
-            double res = b + a;
-            s.push_back(res);
-        } else if (cal.top() == '-') {
-            double a = s.back();
-            s.pop_back();
-            double b = s.back();
-            s.pop_back();
-            double res = b - a;
-            s.push_back(res);
-        } else if (cal.top() == '*') {
-            double a = s.back();
-            s.pop_back();
-            double b = s.back();
-            s.pop_back();
-            int res = b * a;
-            s.push_back(res);
-        } else if (cal.top() == '/') {
-            double a = s.back();
-            s.pop_back();
-            int b = s.back();
-            s.pop_back();
-            double res = b / a;
-            s.push_back(res);
-        }
-        cal.pop();
-    }
-//    while(!s.empty()) {
-//        cout << s.back() << ' ';
-//        s.pop_back();
-//    }
-    cout << s.front();
+    cout << fixed;
+    cout.precision(2);
+    cout << s.top() << '\n';
     
     return 0;
 }
