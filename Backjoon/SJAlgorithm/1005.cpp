@@ -6,6 +6,7 @@
 //
 
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -15,11 +16,24 @@ int main() {
     
     
     int t; cin >> t;
+    int D[1000];
+    vector<vector<int>> G;
     
     for(int i = 0; i < t; i++) {
         int N, K; cin >> N >> K;
+        G.resize(K);
         
-        for(int j = 0; j < K)
+        for(int j = 0; j < N; j++) {
+            cin >> D[j];
+        }
+        
+        for(int j = 0; j < K; j++) {
+            int x, y; cin >> x >> y;
+            G[x].push_back(y);
+            G[y].push_back(x);
+        }
+        int W; cin >> W;
+        
     }
     
     return 0;
