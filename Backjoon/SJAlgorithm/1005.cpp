@@ -43,7 +43,6 @@ int main() {
         }
         while (!q.empty()) {
             int x = q.front(); q.pop();
-            if (x == W) break;
             
             for (int nx : G[x]) {
                 if (--ind[nx] == 0) {
