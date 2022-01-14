@@ -13,22 +13,17 @@ using namespace std;
 int main() {
     ios::sync_with_stdio(NULL);
     cin.tie(NULL); cout.tie(NULL);
-    
+
     string S; cin >> S;
-    vector<char> v;
-    
-    for(int i = 0; i < S.length(); i++) {
-        v.push_back(S[i]);
+    int freq[26];
+    fill(freq, freq + 26, 0);
+
+    for(auto c : S) {
+        freq[c-'a']++;
     }
-    
-    for(int i = 0; i <= 'z' - 'a'; i++) {
-        int cnt = 0;
-        for(int ch : v) {
-            if('a'+i == ch)
-                cnt++;
-        }
-        cout << cnt << ' ';
-    }
-    
+
+    for(int i = 0; i < 26; i++)
+        cout << freq[i] << ' ';
+
     return 0;
 }

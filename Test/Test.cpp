@@ -10,85 +10,67 @@
 
 using namespace std;
 
-int func1(int N) {
-    int result = 0;
-    
-    for(int i = 3; i < N; i++) {
-        if(i % 3 == 0 || i % 5 == 0) {
-            result += i;
-        }
-    }
-    return result;
+const int MX = 1000005;
+int dat[MX], pre[MX], nxt[MX];
+int unused = 1;
+
+void insert(int addr, int num) {
+    dat[unused] = num;
+    pre[unused] = addr;
+    nxt[unused] = nxt[addr];
+    if(nxt[addr] != -1) pre[nxt[addr]] = unused;
+    nxt[addr] = unused;
+    unused++;
 }
 
-int func2(int arr[], int N) {
-    int ret = 0;
-    
-    for(int i = 0; i < N-1; i++) {
-        for(int j = i + 1; j < N; j++) {
-            if(arr[i] + arr[j] == 100)
-                ret = 1;
-        }
-    }
-    return ret;
+void erase(int addr) {
+    nxt[pre[addr]] = nxt[addr];
+    if(nxt[addr] != -1) pre[nxt[addr]] = pre[addr];
 }
 
-int func3(int N) {
-    for(int i = 0; i < N/2; i++) {
-        if(i*i == N) {
-            return 1;
-        } else if(i*i > N) {
-            break;
-        }
+void traverse(){
+    int cur = nxt[0];
+    while(cur != -1){
+        cout << dat[cur] << ' ';
+        cur = nxt[cur];
     }
-    return 0;
+    cout << "\n\n";
 }
 
-int func4(int N) {
-    int val = 1;
-    while(2*val <= N) val *= 2;
-    return val;
+void insert_test(){
+    cout << "****** insert_test *****\n";
+    insert(0, 10); // 10(address=1)
+    traverse();
+    insert(0, 30); // 30(address=2) 10
+    traverse();
+    insert(2, 40); // 30 40(address=3) 10
+    traverse();
+    insert(1, 20); // 30 40 10 20(address=4)
+    traverse();
+    insert(4, 70); // 30 40 10 20 70(address=5)
+    traverse();
+}
+
+void erase_test(){
+    cout << "****** erase_test *****\n";
+    erase(1); // 30 40 20 70
+    traverse();
+    erase(2); // 40 20 70
+    traverse();
+    erase(4); // 40 70
+    traverse();
+    erase(5); // 40
+    traverse();
 }
 
 int main() {
     ios::sync_with_stdio(NULL);
     cin.tie(NULL); cout.tie(NULL);
-    clock_t start, finish;
-    double duration;
     
-    // func1
-    /*
-    cout << func1(16) << '\n';
-    cout << func1(34567) << '\n';
-    cout << func1(27639) << '\n';
-    */
-    
-    // func2
-    /*
-    int arr[] = {4, 13, 63, 87};
-    cout << func2(arr, 4) << '\n';
-    */
-     
-    // func3
-    /*
-    cout << func3(9) << '\n';
-    cout << func3(693953651) << '\n';
-    cout << func3(756580036) << '\n';
-    */
-    
-    
-    // func4
-    start = clock();
-    cout << func4(5) << '\n';
-    cout << func4(97615282) << '\n';
-    cout << func4(1024) << '\n';
-    /*
-    */
-    
-    finish = clock();
-    
-    duration = (double)(finish - start) / CLOCKS_PER_SEC;
-    cout << duration << "초" << endl;
+    fill(pre, pre+MX, -1);
+    fill(nxt, nxt+MX, -1);
+    insert_test();
+    erase_test();
     
     return 0;
 }
