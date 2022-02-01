@@ -7,8 +7,13 @@
 
 #include <iostream>
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+using namespace std;
+
+int main() {
+    ios::sync_with_stdio(NULL);
+    cin.tie(NULL); cout.tie(NULL);
+    
+    
+    
     return 0;
 }
