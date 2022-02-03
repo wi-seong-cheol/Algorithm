@@ -7,49 +7,21 @@
 
 #include <bits/stdc++.h>
 using namespace std;
+using ll = long long;
 
-const int MX = 1000005;
-int dat[2*MX+1];
-int head = MX, tail = MX;
-
-void push_front(int x){
-    dat[--head] = x;
+ll POW(ll a, ll b, ll m) {
+    if(b == 1) return a%m;
+    ll val = POW(a, b/2, m);
+    val = val * val % m;
+    if(b%2 == 0) return val;
+    return val * a % m;
 }
 
-void push_back(int x){
-    dat[tail++] = x;
-}
-
-void pop_front(){
-    head++;
-}
-
-void pop_back(){
-    tail--;
-}
-
-int front(){
-    return dat[head];
-}
-
-int back(){
-    return dat[tail-1];
-}
-
-void test(){
-  push_back(30); // 30
-  cout << front() << '\n'; // 30
-  cout << back() << '\n'; // 30
-  push_front(25); // 25 30
-  push_back(12); // 25 30 12
-  cout << back() << '\n'; // 12
-  push_back(62); // 25 30 12 62
-  pop_front(); // 30 12 62
-  cout << front() << '\n'; // 30
-  pop_front(); // 12 62
-  cout << back() << '\n'; // 62
-}
-
-int main(void){
-  test();
+int main(void) {
+    ios::sync_with_stdio(NULL);
+    cin.tie(NULL);
+    
+    int a, b, c; cin >> a >> b >> c;
+    cout << POW(a, b, c);
+    return 0;
 }
