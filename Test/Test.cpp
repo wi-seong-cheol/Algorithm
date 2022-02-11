@@ -7,29 +7,86 @@
 
 #include <bits/stdc++.h>
 using namespace std;
+string ltrim(const string &);
+string rtrim(const string &);
 
-int n = 10;
-int arr[1000001] = {15, 25, 22, 357, 16, 23, -53, 12, 46, 3};
-
-void quick_sort(int st, int en) { // arr[st to en-1]을 정렬할 예정
-    if(en <= st+1) return; // 수열의 길이가 1 이하이면 함수 종료.(base condition)
-    int pivot = arr[st]; // 제일 앞의 것을 pivot으로 잡는다. 임의의 값을 잡고 arr[st]와 swap해도 상관없음.
-    int l = st+1; // 포인터 l
-    int r = en-1; // 포인터 r
-    while(1){
-        while(l <= r && arr[l] <= pivot) l++;
-        while(l <= r && arr[r] >= pivot) r--;
-        if(l > r) break; // l과 r이 역전되는 그 즉시 탈출
-        swap(arr[l], arr[r]);
+vector<string> findSchedules(int workHours, int dayHours, string pattern) {
+    bool pos[7];
+    int n = 0;
+    vector<string> v(7, 0);
+    for(int i = 0; i < 7; i++) {
+        if(pattern[i] >= '0' && pattern[i] <= '9') {
+            pos[i] = true;
+            n += pattern[i] - '0';
+            v[i] = pattern[i];
+        }
+        else pos[i] = false;
     }
-    swap(arr[st], arr[r]);
-    quick_sort(st, r);
-    quick_sort(r+1, en);
+    for(int i = 0; i < 1111111 * dayHours + 1; i++) {
+        
+        int brute = i;
+        for(int j = 0; j < 7; j++) {
+            int n = brute % dayHours;
+            brute /= dayHours;
+            cout << brute << ' ';
+        }
+        cout << '\n';
+    }
+    return v;
 }
 
-int main() {
-    ios_base::sync_with_stdio(0);
-    cin.tie(0);
-    quick_sort(0, n);
-    for(int i = 0; i < n; i++) cout << arr[i] << ' ';
+int main()
+{
+    ofstream fout(getenv("OUTPUT_PATH"));
+
+    string workHours_temp;
+    getline(cin, workHours_temp);
+
+    int workHours = stoi(ltrim(rtrim(workHours_temp)));
+
+    string dayHours_temp;
+    getline(cin, dayHours_temp);
+
+    int dayHours = stoi(ltrim(rtrim(dayHours_temp)));
+
+    string pattern;
+    getline(cin, pattern);
+
+    vector<string> result = findSchedules(workHours, dayHours, pattern);
+
+    for (int i = 0; i < result.size(); i++) {
+        fout << result[i];
+
+        if (i != result.size() - 1) {
+            fout << "\n";
+        }
+    }
+
+    fout << "\n";
+
+    fout.close();
+
+    return 0;
+}
+
+string ltrim(const string &str) {
+    string s(str);
+
+//    s.erase(
+//        s.begin(),
+//        find_if(s.begin(), s.end(), not1(ptr_fun<int, int>(isspace)))
+//    );
+
+    return s;
+}
+
+string rtrim(const string &str) {
+    string s(str);
+
+//    s.erase(
+//        find_if(s.rbegin(), s.rend(), not1(ptr_fun<int, int>(isspace))).base(),
+//        s.end()
+//    );
+
+    return s;
 }
