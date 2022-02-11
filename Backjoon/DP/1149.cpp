@@ -21,9 +21,7 @@ int main() {
     
     
     for(int i = 1; i <= n; i++) {
-        for(int j = 0; j < 3; j++) {
-            cin >> rgb[i][j];
-        }
+        cin >> rgb[i][0] >> rgb[i][1] >> rgb[i][2];
     }
     
     d[1][0] = rgb[1][0];
