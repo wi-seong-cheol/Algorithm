@@ -4,11 +4,6 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>10026.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>51</integer>
-		</dict>
 		<key>1005.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
@@ -38,6 +33,11 @@
 		<dict>
 			<key>orderHint</key>
 			<integer>44</integer>
+		</dict>
+		<key>10816.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>79</integer>
 		</dict>
 		<key>10828.xcscheme_^#shared#^_</key>
 		<dict>
@@ -149,11 +149,6 @@
 			<key>orderHint</key>
 			<integer>16</integer>
 		</dict>
-		<key>14391.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>25</integer>
-		</dict>
 		<key>1463.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
@@ -208,11 +203,6 @@
 		<dict>
 			<key>orderHint</key>
 			<integer>64</integer>
-		</dict>
-		<key>1780.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>1</integer>
 		</dict>
 		<key>18258.xcscheme_^#shared#^_</key>
 		<dict>
@@ -279,11 +269,6 @@
 			<key>orderHint</key>
 			<integer>10</integer>
 		</dict>
-		<key>2164.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>0</integer>
-		</dict>
 		<key>2178.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
@@ -303,11 +288,6 @@
 		<dict>
 			<key>orderHint</key>
 			<integer>69</integer>
-		</dict>
-		<key>22942.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>0</integer>
 		</dict>
 		<key>2504.xcscheme_^#shared#^_</key>
 		<dict>
@@ -414,6 +394,11 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+		<key>main.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
 		<key>second_main.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
@@ -422,12 +407,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>4D610DEE278D6FAD00DC22ED</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4D7D0A5027B150CC000E7AA6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>4D7D0A8227B2109C000E7AA6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>4DB6210127B7F3C8001244AB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>4DCACE2F2782A2E200BD20E9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4DE3931327BBB39200A6BC5A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
