@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4DE3932227BCE68000A6BC5A /* 1654.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4DE3932127BCE68000A6BC5A /* 1654.cpp */; };
+		4DE3932527BD45E500A6BC5A /* 2230.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4DE3932427BD45E500A6BC5A /* 2230.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -95,6 +95,7 @@
 		4DE3931E27BBD78900A6BC5A /* Sample.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Sample.cpp; sourceTree = "<group>"; };
 		4DE3931F27BBE91B00A6BC5A /* 2295.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 2295.cpp; sourceTree = "<group>"; };
 		4DE3932127BCE68000A6BC5A /* 1654.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 1654.cpp; sourceTree = "<group>"; };
+		4DE3932427BD45E500A6BC5A /* 2230.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 2230.cpp; sourceTree = "<group>"; };
 		4DE80CEE277B039900A41AE6 /* 7347.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 7347.cpp; sourceTree = "<group>"; };
 		4DE80CFA277B15A000A41AE6 /* 2631.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 2631.cpp; sourceTree = "<group>"; };
 		4DE80D07277B1F5100A41AE6 /* 11497.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 11497.cpp; sourceTree = "<group>"; };
@@ -233,6 +234,14 @@
 			path = BinarySearch;
 			sourceTree = "<group>";
 		};
+		4DE3932327BD454300A6BC5A /* TwoPointer */ = {
+			isa = PBXGroup;
+			children = (
+				4DE3932427BD45E500A6BC5A /* 2230.cpp */,
+			);
+			path = TwoPointer;
+			sourceTree = "<group>";
+		};
 		4DE80CF3277B03F100A41AE6 /* SJAlgorithm */ = {
 			isa = PBXGroup;
 			children = (
@@ -308,18 +317,19 @@
 		4DFD2F9A2771DA3300A849C3 /* Backjoon */ = {
 			isa = PBXGroup;
 			children = (
-				4DE392F827BB96BC00A6BC5A /* BinarySearch */,
-				4DE392BE27BA12AC00A6BC5A /* Math */,
-				4D9D7D8427B6CB3F006E9F28 /* Greedy */,
-				4D5C08B627B64CC3001176E5 /* DP */,
-				4DF159C827B3E66500A4175A /* Sort */,
-				4D9CE34427B29B100034889E /* Simulation */,
-				4D7D0A6527B15FC0000E7AA6 /* Recursion */,
 				4D7D0A8A27B21C7D000E7AA6 /* BackTracking */,
 				4D7D0A4727B1504D000E7AA6 /* BFS */,
+				4DE392F827BB96BC00A6BC5A /* BinarySearch */,
 				4DFD2F892771D4E500A849C3 /* DataStructure */,
+				4D5C08B627B64CC3001176E5 /* DP */,
 				4D8045F9278DCFFC00AB2A15 /* ETC */,
+				4D9D7D8427B6CB3F006E9F28 /* Greedy */,
+				4DE392BE27BA12AC00A6BC5A /* Math */,
+				4D7D0A6527B15FC0000E7AA6 /* Recursion */,
+				4D9CE34427B29B100034889E /* Simulation */,
 				4DE80CF3277B03F100A41AE6 /* SJAlgorithm */,
+				4DF159C827B3E66500A4175A /* Sort */,
+				4DE3932327BD454300A6BC5A /* TwoPointer */,
 			);
 			path = Backjoon;
 			sourceTree = "<group>";
@@ -382,7 +392,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DE3932227BCE68000A6BC5A /* 1654.cpp in Sources */,
+				4DE3932527BD45E500A6BC5A /* 2230.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
