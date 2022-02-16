@@ -22,7 +22,7 @@ int main() {
     sort(a, a+n);
     int en = 0;
     for(int st = 0; st < n; st++) {
-        while(en < n && a[en] - a[st] < mn) en++;
+        while(en < n && a[en] - a[st] < m) en++;
         if(en == n) break;
         mn = min(mn, a[en] - a[st]);
     }
