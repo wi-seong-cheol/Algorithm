@@ -6,60 +6,86 @@
 //
 
 #include <bits/stdc++.h>
-
 using namespace std;
 
-void unordered_set_example() {
-    unordered_set<int> s;
-    s.insert(-10); s.insert(100); s.insert(15);
-    s.insert(-10);
-    cout << s.erase(100) << '\n';
-    cout << s.erase(20) << '\n';
-    if(s.find(15) != s.end()) cout << "15 in s\n";
-    else cout << "15 not in s\n";
-    cout << s.size() << '\n';
-    cout << s.count(50) << '\n';
-    for(auto e : s) cout << e << '\n';
-    cout << '\n';
+const int M = 1000003;
+const int a = 1000;
+const int EMPTY = -1;
+const int OCCUPY = 0;
+const int DUMMY = 1;
+int status[M]; // EMPTY / OCCUPY / DUMMY
+string key[M];
+int val[M];
+
+int my_hash(string& s){
+    int h = 0;
+    for(auto x : s)
+        h = (h * a + x) % M;
+    return h;
 }
 
-void unordered_multiset_example() {
-    unordered_multiset<int> ms;
-    ms.insert(-10); ms.insert(100); ms.insert(15);
-    ms.insert(-10); ms.insert(15);
-    cout << ms.size() << '\n';
-    for(auto e : ms) cout << e << '\n';
-    cout << '\n';
-    cout << ms.erase(15) << '\n';
-    ms.erase(ms.find(-10));
-    ms.insert(100);
-    cout << ms.count(100) << '\n';
-}
-
-void unordered_map_example() {
-    unordered_map<string, int> m;
-    m["hi"] = 123;
-    m["bkd"] = 1000;
-    m["gogo"] = 165;
-    cout << m.size() << '\n';
-    m["hi"] = -7;
-    if(m.find("hi") != m.end()) cout << "hi in m\n";
-    else cout << "hi not in m\n";
-    m.erase("bkd");
-    for(auto e : m)
-        cout << e.first << ' ' << e.second << '\n';
-}
-
-int main() {
-    ios::sync_with_stdio(0);
-    cin.tie(0);
+// key[idx] == k인 idx를 반환, 만약 k가 존재하지 않을 경우 -1을 반환
+// key에 대응되는 value를 반환하는게 아니라 인덱스를 반환함에 주의
+int find(string k){
+    int idx = my_hash(k);
     
-    cout << "unordered_set_example" << '\n';
-    unordered_set_example();
-    cout << "unordered_multiset_example" << '\n';
-    unordered_multiset_example();
-    cout << "unordered_map_example" << '\n';
-    unordered_map_example();
-    
-    return 0;
+    while(status[idx] != EMPTY) {
+        if(status[idx] == OCCUPY && key[idx] == k) return idx;
+        idx = (idx+1) % M;
+    }
+    return -1;
+}
+
+void insert(string k, int v){
+    int idx = find(k);
+    if(idx != -1) {
+        val[idx] = v;
+        return;
+    }
+    idx = my_hash(k);
+    while(status[idx] == OCCUPY)
+        idx = (idx+1) % M;
+    key[idx] = k;
+    val[idx] = v;
+    status[idx] = OCCUPY;
+}
+
+void erase(string k){
+    int idx = find(k);
+    if(idx != -1) status[idx] = DUMMY;
+}
+
+void test(){
+    insert("orange", 724); // ("orange", 724)
+    insert("melon", 20); // ("orange", 724), ("melon", 20)
+    assert(val[find("melon")] == 20);
+    insert("banana", 52); // ("orange", 724), ("melon", 20), ("banana", 52)
+    insert("cherry", 27); // ("orange", 724), ("melon", 20), ("banana", 52), ("cherry", 27)
+    insert("orange", 100); // ("orange", 100), ("melon", 20), ("banana", 52), ("cherry", 27)
+    assert(val[find("banana")] == 52);
+    assert(val[find("orange")] == 100);
+    erase("wrong_fruit"); // ("orange", 100), ("melon", 20), ("banana", 52), ("cherry", 27)
+    erase("orange"); // ("melon", 20), ("banana", 52), ("cherry", 27)
+    assert(find("orange") == -1);
+    erase("orange"); // ("melon", 20), ("banana", 52), ("cherry", 27)
+    insert("orange", 15); // ("melon", 20), ("banana", 52), ("cherry", 27), ("orange", 15)
+    assert(val[find("orange")] == 15);
+    insert("apple", 36); // ("melon", 20), ("banana", 52), ("cherry", 27), ("orange", 15), ("apple", 36)
+    insert("lemon", 6); // ("melon", 20), ("banana", 52), ("cherry", 27), ("orange", 15), ("apple", 36), ("lemon", 6)
+    insert("orange", 701);  // ("melon", 20), ("banana", 52), ("cherry", 27), ("orange", 701), ("apple", 36), ("lemon", 6)
+    assert(val[find("cherry")] == 27);
+    erase("xxxxxxx");
+    assert(find("xxxxxxx") == -1);
+    assert(val[find("apple")] == 36);
+    assert(val[find("melon")] == 20);
+    assert(val[find("banana")] == 52);
+    assert(val[find("cherry")] == 27);
+    assert(val[find("orange")] == 701);
+    assert(val[find("lemon")] == 6);
+    cout << "good!\n";
+}
+
+int main(){
+    fill(status, status+M, EMPTY);
+    test();
 }
