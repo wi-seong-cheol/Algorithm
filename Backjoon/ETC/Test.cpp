@@ -7,37 +7,27 @@
 
 #include <bits/stdc++.h>
 using namespace std;
+vector<int> adj[10];
+bool vis[10];
 
-int heap[100005];
-int sz = 0; // heap에 들어있는 원소의 수
-
-void push(int x){
-    for(int i = 1; i < sz/2; i++) {
-        
+void bfs() {
+    queue<int> q;
+    q.push(1);
+    vis[1] = true;
+    while(!q.empty()) {
+        int cur = q.front(); q.pop();
+        cout << cur << ' ';
+        for(auto nxt : adj[cur]) {
+            if(vis[nxt]) continue;
+            q.push(nxt);
+            vis[nxt] = true;
+        }
     }
-    sz++;
 }
 
-int top(){
-    return heap[1];
-}
-
-void pop(){
-    sz--;
-}
-
-void test(){
-    push(10); push(2); push(5); push(9); // {10, 2, 5, 9}
-    cout << top() << '\n'; // 2
-    pop(); // {10, 5, 9}
-    pop(); // {10, 9}
-    cout << top() << '\n'; // 9
-    push(5); push(15); // {10, 9, 5, 15}
-    cout << top() << '\n'; // 5
-    pop(); // {10, 9, 15}
-    cout << top() << '\n'; // 9
-}
-
-int main(){
-    test();
+int main() {
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    
+    return 0;
 }
