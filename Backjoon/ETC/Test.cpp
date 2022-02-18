@@ -8,19 +8,18 @@
 #include <bits/stdc++.h>
 using namespace std;
 vector<int> adj[10];
-bool vis[10];
+int p[10];
 
-void bfs() {
+void bfs(int root) {
     queue<int> q;
-    q.push(1);
-    vis[1] = true;
+    q.push(root);
     while(!q.empty()) {
         int cur = q.front(); q.pop();
         cout << cur << ' ';
-        for(auto nxt : adj[cur]) {
-            if(vis[nxt]) continue;
+        for(int nxt : adj[cur]) {
+            if(p[cur] == nxt) continue;
             q.push(nxt);
-            vis[nxt] = true;
+            p[nxt] = cur;
         }
     }
 }
