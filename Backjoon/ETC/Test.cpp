@@ -8,25 +8,21 @@
 #include <bits/stdc++.h>
 using namespace std;
 vector<int> adj[10];
-int p[10];
-
-void bfs(int root) {
-    queue<int> q;
-    q.push(root);
-    while(!q.empty()) {
-        int cur = q.front(); q.pop();
-        cout << cur << ' ';
-        for(int nxt : adj[cur]) {
-            if(p[cur] == nxt) continue;
-            q.push(nxt);
-            p[nxt] = cur;
-        }
-    }
-}
+int deg[10];
+int n;
 
 int main() {
     ios::sync_with_stdio(0);
     cin.tie(0);
+    
+    for(int i = 0; i < 7; i++) {
+        char u, v; cin >> u >> v;
+        adj['A' - u].push_back('A' - v);
+    }
+    
+    for(int i = 0; i < 7; ) {
+        
+    }
     
     return 0;
 }
