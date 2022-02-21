@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4D6394F427C37D19009CEA1B /* Stack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4D6394F327C37D19009CEA1B /* Stack.cpp */; };
+		4D6394F827C37F65009CEA1B /* 17298.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4D6394F727C37F65009CEA1B /* 17298.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -38,6 +38,8 @@
 		4D5C08D527B652C2001176E5 /* 2579.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 2579.cpp; sourceTree = "<group>"; };
 		4D610DF1278D6FAD00DC22ED /* Test.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Test.cpp; sourceTree = "<group>"; };
 		4D6394F327C37D19009CEA1B /* Stack.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Stack.cpp; sourceTree = "<group>"; };
+		4D6394F527C37E08009CEA1B /* 10773.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 10773.cpp; sourceTree = "<group>"; };
+		4D6394F727C37F65009CEA1B /* 17298.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 17298.cpp; sourceTree = "<group>"; };
 		4D7B2E6727B2252B0023064C /* 15649.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 15649.cpp; sourceTree = "<group>"; };
 		4D7B2E7227B2290F0023064C /* 9663.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 9663.cpp; sourceTree = "<group>"; };
 		4D7D09E527AFD954000E7AA6 /* 2204.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 2204.cpp; sourceTree = "<group>"; };
@@ -288,6 +290,8 @@
 		4DA34CDC27C378E200A19A24 /* Stack */ = {
 			isa = PBXGroup;
 			children = (
+				4D6394F527C37E08009CEA1B /* 10773.cpp */,
+				4D6394F727C37F65009CEA1B /* 17298.cpp */,
 			);
 			path = Stack;
 			sourceTree = "<group>";
@@ -552,7 +556,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D6394F427C37D19009CEA1B /* Stack.cpp in Sources */,
+				4D6394F827C37F65009CEA1B /* 17298.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
