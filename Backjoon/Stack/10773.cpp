@@ -20,11 +20,8 @@ int main() {
     
     while(k--) {
         int n; cin >> n;
-        if(n == 0) {
-            if(!s.empty()) s.pop();
-        } else {
-            s.push(n);
-        }
+        if(n == 0) s.pop();
+        else s.push(n);
     }
     int sum = 0;
     while(!s.empty()) {

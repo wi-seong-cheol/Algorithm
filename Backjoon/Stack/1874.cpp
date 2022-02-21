@@ -25,17 +25,15 @@ int main() {
         
         while(cnt <= x) {
             s.push(cnt++);
-            res += '+';
+            res += "+\n";
         }
-        if(s.top() == x) {
-            s.pop();
-            res += '-';
-        } else {
+        if(s.top() != x) {
             cout << "NO";
             return 0;
         }
+        s.pop();
+        res += "-\n";
     }
-    for(int i = 0; i < res.size(); i++)
-        cout << res[i] << '\n';
+    cout << res;
     return 0;
 }
