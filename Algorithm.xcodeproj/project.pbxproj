@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4DA50F8A27C7636A009E0304 /* 20304.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4DA50F8927C7636A009E0304 /* 20304.cpp */; };
+		4DA50F8C27C77137009E0304 /* 2146.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4DA50F8B27C77137009E0304 /* 2146.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -84,6 +84,7 @@
 		4DA34CDD27C3793200A19A24 /* LinkedLiist.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LinkedLiist.cpp; sourceTree = "<group>"; };
 		4DA50F8327C73A8B009E0304 /* 17071.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 17071.cpp; sourceTree = "<group>"; };
 		4DA50F8927C7636A009E0304 /* 20304.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 20304.cpp; sourceTree = "<group>"; };
+		4DA50F8B27C77137009E0304 /* 2146.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 2146.cpp; sourceTree = "<group>"; };
 		4DA9B4F427940159000DF666 /* 14950.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 14950.cpp; sourceTree = "<group>"; };
 		4DA9B4FF27940685000DF666 /* 11509.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 11509.cpp; sourceTree = "<group>"; };
 		4DA9B50A27940FEB000DF666 /* 4096.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = 4096.cpp; sourceTree = "<group>"; };
@@ -256,6 +257,7 @@
 				4DD4057827C63E28007B9C10 /* 1600.cpp */,
 				4D7D0A2127B100BD000E7AA6 /* 1697.cpp */,
 				4D90A65227A813EA00599CD6 /* 1926.cpp */,
+				4DA50F8B27C77137009E0304 /* 2146.cpp */,
 				4D7D0A0327B0E67E000E7AA6 /* 2178.cpp */,
 				4D7D0A1627B0FA38000E7AA6 /* 4179.cpp */,
 				4D7D0A0B27B0F1C7000E7AA6 /* 7576.cpp */,
@@ -632,7 +634,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DA50F8A27C7636A009E0304 /* 20304.cpp in Sources */,
+				4DA50F8C27C77137009E0304 /* 2146.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
