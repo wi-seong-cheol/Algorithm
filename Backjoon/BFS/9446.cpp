@@ -9,9 +9,9 @@
 #include <queue>
 
 using namespace std;
-const int MX = 100'005;
+const int MX = 100005;
 const int NOT_VISITED = 0;
-const int CYCLE_IN = 1;
+const int CYCLE_IN = -1;
 int n;
 int arr[MX];
 int state[MX];
@@ -38,7 +38,7 @@ int main() {
     while(t--) {
         cin >> n;
         fill(state, state+n+1, 0);
-        for(int i = 0; i < n; i++)
+        for(int i = 1; i <= n; i++)
             cin >> arr[i];
         int ans = 0;
         for(int i = 1; i <= n; i++)
