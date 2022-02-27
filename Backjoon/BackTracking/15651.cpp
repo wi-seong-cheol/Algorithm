@@ -20,10 +20,8 @@ void func(int k) {
         return;
     }
     for(int i = 1; i <= n; i++) {
-        if(!isused[i]) {
-            arr[k] = i;
-            func(k+1);
-        }
+        arr[k] = i;
+        func(k+1);
     }
 }
 
