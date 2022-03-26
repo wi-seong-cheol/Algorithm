@@ -7,10 +7,11 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 
 using namespace std;
 int n;
-string s[10001];
+vector<pair<int, string>> v;
 
 int main() {
     ios::sync_with_stdio(0);
@@ -21,14 +22,11 @@ int main() {
         cin >> n;
         bool chk = false;
         for(int i = 0; i < n; i++) {
-            cin >> s[i];
-            for(int j = 0; j < i; j++) {
-                if(s[i].find(s[j]) != string::npos) {
-                    chk = true;
-                    break;
-                }
-            }
+            string s; cin >> s;
+            int len = int(s.length());
+            v.push_back({len, s});
         }
+        for(int i = 0; i < n; i++)
         if(!chk) cout << "YES" << '\n';
         else cout << "NO" << '\n';
     }
