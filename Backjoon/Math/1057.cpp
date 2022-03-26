@@ -24,10 +24,8 @@ int main() {
             cout << ans << '\n';
             break;
         }
-        else {
-            a = (a + 1) / 2;
-            b = (b + 1) / 2;
-        }
+        a = (a + 1) / 2;
+        b = (b + 1) / 2;
         ans++;
         n /= 2;
     }
