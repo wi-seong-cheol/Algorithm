@@ -15,7 +15,7 @@ int k, m;
 vector<ll> primeNum;
 bool chk1[100001];
 bool chk2[100001];
-int vis[10];
+int vis[10]; 
 
 // 에라토스테네스의 체를 이용한 소수 만들기
 void primeNumberSeive(int n) {
