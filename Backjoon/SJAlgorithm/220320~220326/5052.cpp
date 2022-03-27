@@ -30,7 +30,7 @@ int main() {
             }
         }
         cout << (ans ? "YES":"NO") << '\n';
-    }
+    } 
     
     return 0;
 }
