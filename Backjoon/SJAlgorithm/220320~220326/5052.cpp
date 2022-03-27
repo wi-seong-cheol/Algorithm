@@ -6,12 +6,12 @@
 //
 
 #include <iostream>
+#include <algorithm>
 #include <string>
-#include <vector>
 
 using namespace std;
 int n;
-vector<pair<int, string>> v;
+string s[10001];
 
 int main() {
     ios::sync_with_stdio(0);
@@ -20,15 +20,16 @@ int main() {
     int t; cin >> t;
     while(t--) {
         cin >> n;
-        bool chk = false;
-        for(int i = 0; i < n; i++) {
-            string s; cin >> s;
-            int len = int(s.length());
-            v.push_back({len, s});
+        bool ans = true;
+        for(int i = 0; i < n; i++) cin >> s[i];
+        sort(s, s + n);
+        for(int i = 0; i < n - 1; i++) {
+            if(s[i] == s[i+1].substr(0, s[i].length())) {
+                ans = false;
+                break;
+            }
         }
-        for(int i = 0; i < n; i++)
-        if(!chk) cout << "YES" << '\n';
-        else cout << "NO" << '\n';
+        cout << (ans ? "YES":"NO") << '\n';
     }
     
     return 0;

@@ -19,18 +19,18 @@ int vis[10];
 
 // 에라토스테네스의 체를 이용한 소수 만들기
 void primeNumberSeive(int n) {
-    vector<bool> isPrime(n + 1);
-    for(int i = 2; i <= sqrt(n); i++)  {
+    vector<bool> isPrime(100001);
+    for(int i = 2; i * i < 100000; i++)  {
         if(isPrime[i]) continue;
-        for(int j = i * i; j <= n; j += i)
+        for(int j = i * i; j < 100000; j += i)
             isPrime[j] = true;
     }
-    for(int i = 2; i <= n; i++)
+    for(int i = 2; i < 100000; i++)
         if(!isPrime[i]) primeNum.push_back(i);
 }
 
 bool check2(int val) {
-    while(val % m ==0)
+    while(val % m == 0)
         val /= m;
     if(chk2[val] == 1)
         return true;
@@ -53,7 +53,7 @@ int comb(int cur, int idx, int max, int val) {
         ret += comb(cur, idx + 1, max, val * 10 + i);
         vis[i] = 0;
     }
-    
+
     return ret;
 }
 
@@ -63,20 +63,20 @@ int main() {
 
     cin >> k >> m;
     primeNumberSeive(m);
-    
+
     int primeSize = int(primeNum.size());
     for(int i = 0; i < primeSize; i++) {
         for(int j = i + 1; j < primeSize; j++) {
             if(primeNum[i] + primeNum[j] < 100000)
-                chk1[primeNum[i] + primeNum[j]] = 1;
+                chk1[(int)(primeNum[i] + primeNum[j])] = 1;
         }
         for(int j = i; j < primeSize; j++) {
-            if(primeNum[i] + primeNum[j] < 100000)
-                chk2[primeNum[i] * primeNum[j]] = 1;
+            if((ll)(primeNum[i] * primeNum[j]) < 100000)
+                chk2[(int)(primeNum[i] * primeNum[j])] = 1;
         }
     }
-    int ans = comb(0, 0, 1, 0);
+    int ans = comb(0, 0, k, 0);
     cout << ans;
-    
+
     return 0;
 }
