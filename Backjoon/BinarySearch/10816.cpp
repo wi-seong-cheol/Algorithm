@@ -1,8 +1,8 @@
 //
-//  main.cpp
-//  10816
+//  10816.cpp
+//  main
 //
-//  Created by wi_seong on 2022/02/15.
+//  Created by wi_seong on 2022/04/21.
 //
 
 #include <iostream>
@@ -42,10 +42,9 @@ int main() {
     sort(a, a + n);
     while(m--) {
         int target; cin >> target;
-        // STL X
-//        cout << upper_idx(target, n) - lower_idx(target, n) << ' ';
-        // STL O
-        cout << upper_bound(a, a+n, target) - lower_bound(a, a+n, target) << ' ';
+        int low = lower_idx(target, n);
+        int upper = upper_idx(target, n);
+        cout << upper - low << ' ';
     }
     
     return 0;
